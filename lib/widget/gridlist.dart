@@ -6,31 +6,56 @@ class GridList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: GridView.count(crossAxisCount: 2,
-          children: List.generate(details.length, (index){
-            return Card(
-              child: Column(
-                children: [
-                  Image.asset(details[index].imag,
-                    height: 40,
-                  fit: BoxFit.fill,),
-                  Text(details[index].name,
-                  maxLines: 2,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    
-                  ),),
-                  Text(details[index].price,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w100,
-                  ),)
-                  
-                  
-                ],
+      body: Padding(
+        padding: const EdgeInsets.all(38.0),
+        child:
+        GridView.count(crossAxisCount: 2,
+            mainAxisSpacing: 3.0,
+            children: List.generate(details.length, (index){
+              return
+                 Container(
+                   height: 100,
+                   width: 150,
+                   child: Card(
+
+                    child:Column(
+                      children: [
+
+                        Container(
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      image:   AssetImage(details[index].imag,
+                     ),
+                     fit: BoxFit.cover,
+                    ),
+                    ) ,
+                          //child: Image.asset(details[index].imag,
+                           // height: 100,
+                            //width: 100,
+
+                           // fit: BoxFit.cover,),
+                       // ),
+                        ),
+                        Text(details[index].name,
+                        maxLines: 2,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+
+                        ),),
+                        Text(details[index].price,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w100,
+                        ),)
+
+
+                      ],
+                    ),
+
               ),
-            );
-          }),
+                 );
+            }
+            ),
+
         ),
       ),
     );
