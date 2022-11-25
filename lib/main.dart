@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sampleui/widget/choicechipCountry.dart';
-import 'package:sampleui/widget/choicechipCountryM.dart';
 import 'package:sampleui/widget/gridlist.dart';
 
 void main() {
@@ -14,8 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const
-           //Gri
+      home: //const
+         // GridList(),
           //ChoicechipCountry(),
           MyHomePage(),
     );
@@ -44,8 +43,8 @@ class MyHomePage extends StatelessWidget {
               SizedBox(
                 child: Image.asset(
                   'lib/asset/home_png.png',
-                  height: 50,
-                  width: 50,
+                  height: 30,
+                  width: 30,
                 ),
               ),
               Spacer(),
@@ -69,47 +68,57 @@ class MyHomePage extends StatelessWidget {
               fontSize: 30,
             ),
           ),
-          SizedBox(
-              height: 20,
-          ),
-          Container(
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: Row(
-                    children: [
-                      Image.asset('lib/asset/search.png',
-                        height: 30,
-                        width: 30,
-                      fit: BoxFit.fill,),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            //icon: Icon( Icons.search),
-                            border: InputBorder.none,
-                            hintText: 'Search',
-                          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 28.0, left: 30),
+            child: Container(
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Row(
+                  children: [
+                    Image.asset('lib/asset/search.png'),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          //icon: Icon( Icons.search),
+                          border: InputBorder.none,
+                          hintText: 'Search',
                         ),
                       ),
-                    ],
-                  ),
-                ),
+                    ),
+                  ],
+                )),
+          ),
+           Expanded(child: ChoicechipCountry()),
+          Row(
+            children: [
+              Text('Popular properties',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+
+              ),),
+              Spacer(),
+         TextButton (onPressed: (){} ,child:Text('view all',
+          style:TextStyle(color: Colors.green[200]),) ,
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.grey[200]),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50)
+                    
               )),
-          Expanded(
-            child: Container(
-                height: 200,
-                child: ChoicechipCountryN()),
-           ),
-          Expanded(child: GridList()),
+              textStyle: MaterialStateProperty.all( TextStyle(color: Colors.green[700]))
+                
+            ),
+          )
+            ],
+          ),
+          Expanded(child: GridList())
         ],
       ),
     )));
