@@ -12,34 +12,40 @@ class _ChoicechipCountryState extends State<ChoicechipCountry> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.symmetric(vertical: 20.0),
-    child: ListView.builder(
-      scrollDirection: Axis.horizontal,
-        itemBuilder: (context, Index) {
-      return Container(
-        child: ChoiceChip(
-          label: Container(width: 60, child: Text(selector[Index].Countryname)),
-          selected: _value == Index,
-          avatar: CircleAvatar(
-            radius: 30,
-            child: ClipOval(
-              child: Image.asset(selector[Index].Img,
-                  height: 30, width: 30, fit: BoxFit.cover),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+       // Container(
+         //   margin: EdgeInsets.symmetric(vertical: 20.0),
+        //child:
+      ListView.builder(
+          scrollDirection: Axis.horizontal,
+            itemBuilder: (context, Index) {
+          return Container(
+            child: ChoiceChip(
+              label: Container(width: 60, child: Text(selector[Index].Countryname)),
+              selected: _value == Index,
+              avatar: CircleAvatar(
+                radius: 30,
+                child: ClipOval(
+                  child: Image.asset(selector[Index].Img,
+                      height: 30, width: 30, fit: BoxFit.cover),
+                ),
+              ),
+              backgroundColor: Colors.white,
+              selectedColor: Colors.cyan,
+              onSelected: (bool value) {
+                setState(() {
+                  _value = (value ? Index : null)!;
+                });
+              },
             ),
+          );
+            },
+            itemCount: selector.length,
           ),
-          backgroundColor: Colors.white,
-          selectedColor: Colors.cyan,
-          onSelected: (bool value) {
-            setState(() {
-              _value = (value ? Index : null)!;
-            });
-          },
-        ),
-      );
-        },
-        itemCount: selector.length,
-      ),
+
+      ],
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sampleui/widget/choicechipCountry.dart';
-import 'package:sampleui/widget/choicechipCountryM.dart';
+
 import 'package:sampleui/widget/gridlist.dart';
+import 'package:sampleui/widget/sampleui_bottombar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       home: const
            //Gri
           //ChoicechipCountry(),
-          MyHomePage(),
+         // MyHomePage(),
+      SampleUiBottombar(),
     );
   }
 }
@@ -105,10 +107,9 @@ class MyHomePage extends StatelessWidget {
                 ),
               )),
           Expanded(
-            child: Container(
-                height: 200,//
-                child: ChoicechipCountryN()),
-           ),
+
+                child: ChoicechipCountry()),
+
           Expanded(child: GridList()),
         ],
       ),
