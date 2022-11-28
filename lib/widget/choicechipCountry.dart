@@ -8,7 +8,7 @@ class ChoicechipCountry extends StatefulWidget {
 }
 
 class _ChoicechipCountryState extends State<ChoicechipCountry> {
-  int _value = 1;
+  int _value = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +16,16 @@ class _ChoicechipCountryState extends State<ChoicechipCountry> {
         //body
 
         Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              height: 100,
-              child: ListView.builder(
-      itemBuilder: (context, Index) {
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          height: 100,
+          child: ListView.builder(
+            itemBuilder: (context, Index) {
               return ChoiceChip(
-                label: Container(width: 60,
+                label: Container(
+                    width: 60,
                     height: 20,
                     child: Text(selector[Index].Countryname)),
                 selected: _value == Index,
@@ -43,16 +44,14 @@ class _ChoicechipCountryState extends State<ChoicechipCountry> {
                   });
                 },
               );
-      },
-      scrollDirection: Axis.horizontal,
-      itemCount: selector.length,
-    ),
-            )
-                // )
-
-
-          ],
-        );
+            },
+            scrollDirection: Axis.horizontal,
+            itemCount: selector.length,
+          ),
+        )
+        // )
+      ],
+    );
   }
 }
 
