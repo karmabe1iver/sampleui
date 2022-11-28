@@ -68,6 +68,9 @@ flutter:
      - lib/asset/austa.jpg
      - lib/asset/irela.jpg
      - lib/asset/ukimage.webp
+     - lib/asset/icon1.png
+     - lib/asset/icon2.png
+     - lib/asset/icon3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
