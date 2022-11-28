@@ -20,7 +20,7 @@ class GridList extends StatelessWidget {
         crossAxisSpacing: 10.0,
         children: List.generate(details.length, (index) {
           return Container(
-            height: 150,
+            height: 180,
             width: 150,
             child: Card(
               margin: EdgeInsets.all(6),
@@ -31,7 +31,7 @@ class GridList extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 110,
+                    height: size.height * .18,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         image: DecorationImage(
@@ -56,12 +56,19 @@ class GridList extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
-                    child: Text(
-                      details[index].price,
-                      maxLines: 2,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w100,
-                      ),
+                    child: Row(
+                      children: [
+                        Text('from'),
+                        Text(
+                          details[index].price,
+                          maxLines: 2,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            color: Colors.cyan,
+                          ),
+                        ),
+                        Text('/week')
+                      ],
                     ),
                   )
                 ],
@@ -88,17 +95,17 @@ List<Apartment> details = <Apartment>[
   Apartment(
       imag: 'lib/asset/irela.jpg',
       name: 'ROSES EXECUTIVE APARTMENT 3',
-      price: 'from \$300 / week'),
+      price: ' \$300 '),
   Apartment(
       imag: 'lib/asset/irela.jpg',
       name: 'ROSES EXECUTIVE APARTMENT 3',
-      price: 'from \$300 / week'),
+      price: ' \$300 '),
   Apartment(
       imag: 'lib/asset/irela.jpg',
       name: 'ROSES EXECUTIVE APARTMENT 3',
-      price: 'from \$300 / week'),
+      price: ' \$300 '),
   Apartment(
       imag: 'lib/asset/irela.jpg',
       name: 'ROSES EXECUTIVE APARTMENT 3',
-      price: 'from \$300 / week')
+      price: ' \$300 ')
 ];

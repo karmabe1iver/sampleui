@@ -8,49 +8,54 @@ class ChoicechipCountry extends StatefulWidget {
 }
 
 class _ChoicechipCountryState extends State<ChoicechipCountry> {
+  var size, width, height;
   int _value = 0;
 
   @override
   Widget build(BuildContext context) {
-    return //Scaffold(
-        //body
-
-        Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          height: 100,
-          child: ListView.builder(
-            itemBuilder: (context, Index) {
-              return ChoiceChip(
-                label: Container(
-                    width: 60,
-                    height: 20,
-                    child: Text(selector[Index].Countryname)),
-                selected: _value == Index,
-                avatar: CircleAvatar(
-                  radius: 30,
-                  child: ClipOval(
-                    child: Image.asset(selector[Index].Img,
-                        height: 30, width: 30, fit: BoxFit.cover),
+    size = MediaQuery.of(context).size;
+    width = size.width;
+    height = size.height;
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            height: size.height * .1,
+            child: ListView.builder(
+              itemBuilder: (context, Index) {
+                return ChoiceChip(
+                  label: Container(
+                      width: size.width * .12,
+                      height: 25,
+                      child: Text(selector[Index].Countryname)),
+                  selected: _value == Index,
+                  avatar: CircleAvatar(
+                    radius: 30,
+                    child: ClipOval(
+                      child: Image.asset(selector[Index].Img,
+                          height: 30, width: 30, fit: BoxFit.cover),
+                    ),
                   ),
-                ),
-                backgroundColor: Colors.white,
-                selectedColor: Colors.cyan,
-                onSelected: (bool value) {
-                  setState(() {
-                    _value = (value ? Index : null)!;
-                  });
-                },
-              );
-            },
-            scrollDirection: Axis.horizontal,
-            itemCount: selector.length,
-          ),
-        )
-        // )
-      ],
+                  backgroundColor: Colors.white,
+                  selectedColor: Colors.cyan,
+                  onSelected: (bool value) {
+                    setState(() {
+                      _value = (value ? Index : null)!;
+                    });
+                  },
+                );
+              },
+              scrollDirection: Axis.horizontal,
+              itemCount: selector.length,
+            ),
+          )
+          // )
+        ],
+      ),
     );
   }
 }
