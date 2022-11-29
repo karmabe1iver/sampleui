@@ -21,7 +21,7 @@ class _ChoicechipCountryState extends State<ChoicechipCountry> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,//45654
+        mainAxisSize: MainAxisSize.min,//456549ki
         children: [
           Container(
             height: size.height * .12,
