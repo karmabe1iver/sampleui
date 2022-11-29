@@ -12,74 +12,71 @@ class GridList extends StatelessWidget {
 
     return //Scaffold(
 
-      //  Padding(
-     // padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-    //  child:
-    GridView.count(
-        crossAxisCount: 2,
-        mainAxisSpacing: 8.0,
-        crossAxisSpacing: 8.0,
-        children: List.generate(details.length, (index) {
-          return Container(
-            height: size.height*.08,
-            width: size.width*.5,
-            child: Card(
-
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: size.height * .1,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            details[index].imag,
-                          ),
-                          fit: BoxFit.cover,
+        //  Padding(
+        // padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+        //  child:
+        GridView.count(
+      crossAxisCount: 2,
+      mainAxisSpacing: 8.0,
+      crossAxisSpacing: 8.0,
+      children: List.generate(details.length, (index) {
+        return Container(
+          height: size.height * .08,
+          width: size.width * .5,
+          child: Card(
+            elevation: 4,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: size.height * .1,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          details[index].imag,
                         ),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(20))),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0, top: 8.0),
-                    child:
-                    Text(
-                      details[index].name,
-                      maxLines: 2,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fit: BoxFit.cover,
                       ),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20))),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0, top: 8.0),
+                  child: Text(
+                    details[index].name,
+                    maxLines: 2,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Padding(
-                   padding: const EdgeInsets.only(left: 8.0),
-              child:
-                    Row(
-                      children: [
-                        Text('from'),
-                        Text(
-                          details[index].price,
-                          maxLines: 2,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            color: Colors.cyan,
-                          ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Row(
+                    children: [
+                      Text('from'),
+                      Text(
+                        details[index].price,
+                        maxLines: 2,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          color: Colors.cyan,
                         ),
-                        Text('/week')
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                      ),
+                      Text('/week')
+                    ],
+                  ),
+                )
+              ],
             ),
-          );
-        }),
-     // ),
+          ),
+        );
+      }),
+      // ),
 
       // ),
     );
