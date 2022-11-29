@@ -33,9 +33,9 @@ class MyHomePage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(
-            left: 28.0,
+            left: 18.0,
             top: 28,
-            right: 28,
+            right: 18,
           ),
           child: Container(
             height: double.infinity,
