@@ -21,61 +21,73 @@ class GridList extends StatelessWidget {
       mainAxisSpacing: 8.0,
       crossAxisSpacing: 8.0,
       children: List.generate(details.length, (index) {
-        return Container(
-          height: size.height * .08,
-          width: size.width * .5,
-          child: Card(
-            elevation: 4,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: size.height * .11,
-                  width: size.width*.5,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          details[index].imag,
-                        ),
+        return  Container(
+            height: double.infinity,
+            width: size.width * .5,
+            child: Card(
+              elevation: 4,
+              shape:
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: size.height * .11,
+                      width: size.width*.5,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              details[index].imag,
+                            ),
 
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20))),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 5.0, top: 5.0),
-                  child: Text(
-                    details[index].name,
-                    maxLines: 2,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20))),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Row(
-                    children: [
-                      Text('from'),
-                      Text(
-                        details[index].price,
-                        maxLines: 2,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0, top: 5.0),
+                      child: Text(
+                        details[index].name,
+
+                        maxLines: 3,
+                        overflow: TextOverflow.fade,
                         style: TextStyle(
-                          fontWeight: FontWeight.w900,
-                          color: Colors.cyan,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('/week')
-                    ],
-                  ),
-                )
-              ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child:
+                      //Row(
+                      //  children: [
+                         // Text('from',
+                         // maxLines: 2,
+                         // overflow: TextOverflow.fade,),
+                          Text(
+                           'from ${details[index].price} /week ',
+                            maxLines: 2,
+                            overflow: TextOverflow.fade,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                             // color: Colors.cyan,
+                            ),
+                          ),
+                         // Text('/week',
+                         // maxLines: 2,
+                         // overflow: TextOverflow.fade,)
+                       // ],
+                     // ),
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
+
         );
       }),
       // ),

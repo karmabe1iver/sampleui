@@ -105,6 +105,7 @@ class MyHomePage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Row(
+
                     children: [
                       Text(
                         'Popular properties',
@@ -131,7 +132,11 @@ class MyHomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(child: GridList())
+                Expanded(
+
+                    child:
+                GridList(),
+      )
               ],
             ),
           ),
