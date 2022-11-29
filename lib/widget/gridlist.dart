@@ -12,26 +12,27 @@ class GridList extends StatelessWidget {
 
     return //Scaffold(
 
-        Padding(
-      padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-      child: GridView.count(
+      //  Padding(
+     // padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+    //  child:
+    GridView.count(
         crossAxisCount: 2,
-        mainAxisSpacing: 10.0,
-        crossAxisSpacing: 10.0,
+        mainAxisSpacing: 8.0,
+        crossAxisSpacing: 8.0,
         children: List.generate(details.length, (index) {
           return Container(
-            height: 180,
-            width: 150,
+            height: size.height*.08,
+            width: size.width*.5,
             child: Card(
-              margin: EdgeInsets.all(6),
-              elevation: 2,
+
+              elevation: 4,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: size.height * .18,
+                    height: size.height * .1,
                     width: double.infinity,
                     decoration: BoxDecoration(
                         image: DecorationImage(
@@ -46,7 +47,8 @@ class GridList extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0, top: 8.0),
-                    child: Text(
+                    child:
+                    Text(
                       details[index].name,
                       maxLines: 2,
                       style: TextStyle(
@@ -55,8 +57,9 @@ class GridList extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Row(
+                   padding: const EdgeInsets.only(left: 8.0),
+              child:
+                    Row(
                       children: [
                         Text('from'),
                         Text(
@@ -76,7 +79,7 @@ class GridList extends StatelessWidget {
             ),
           );
         }),
-      ),
+     // ),
 
       // ),
     );

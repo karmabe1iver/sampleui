@@ -20,18 +20,18 @@ class _ChoicechipCountryState extends State<ChoicechipCountry> {
       padding: const EdgeInsets.only(left: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            height: size.height * .1,
+            height: size.height * .12,
             child: ListView.builder(
               itemBuilder: (context, Index) {
                 return ChoiceChip(
                   label: Container(
                       width: size.width * .12,
-                      height: 25,
-                      child: Text(selector[Index].Countryname)),
+                      height: 18,
+                      child: Text(selector[Index].Countryname,textAlign: TextAlign.justify,)),
                   selected: _value == Index,
                   avatar: CircleAvatar(
                     radius: 30,
