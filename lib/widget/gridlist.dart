@@ -15,6 +15,7 @@ class GridList extends StatelessWidget {
         //  Padding(
         // padding: const EdgeInsets.only(left: 10.0, right: 10.0),
         //  child:
+
         GridView.count(
       crossAxisCount: 2,
       mainAxisSpacing: 8.0,
@@ -31,13 +32,14 @@ class GridList extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: size.height * .1,
-                  width: double.infinity,
+                  height: size.height * .11,
+                  width: size.width*.5,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
                           details[index].imag,
                         ),
+
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.only(
@@ -45,7 +47,7 @@ class GridList extends StatelessWidget {
                           topRight: Radius.circular(20))),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0, top: 8.0),
+                  padding: const EdgeInsets.only(left: 5.0, top: 5.0),
                   child: Text(
                     details[index].name,
                     maxLines: 2,

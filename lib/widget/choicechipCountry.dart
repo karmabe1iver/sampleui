@@ -29,7 +29,7 @@ class _ChoicechipCountryState extends State<ChoicechipCountry> {
               itemBuilder: (context, Index) {
                 return ChoiceChip(
                   label: Container(
-                      width: size.width * .12,
+                      width: size.width * .1,
                       height: 18,
                       child: Text(selector[Index].Countryname,textAlign: TextAlign.justify,)),
                   selected: _value == Index,

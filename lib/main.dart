@@ -11,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,107 +31,111 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: BottomBar(),
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.only(
-          left: 28.0,
-          top: 28,
-          right: 28,
-        ),
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Row(
-                children: [
-                  SizedBox(
-                    child: Image.asset(
-                      'lib/asset/home_png.png',
-                      height: 30,
-                      width: 30,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 28.0,
+            top: 28,
+            right: 28,
+          ),
+          child: Container(
+            height: double.infinity,
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Row(
+                  children: [
+                    SizedBox(
+                      child: Image.asset(
+                        'lib/asset/home_png.png',
+                        height: 30,
+                        width: 30,
+                      ),
                     ),
-                  ),
-                  Spacer(),
-                  SizedBox(
-                    child: Image.asset(
-                      'lib/asset/acnt_png.png',
-                      height: 35,
-                      width: 35,
+                    Spacer(),
+                    SizedBox(
+                      child: Image.asset(
+                        'lib/asset/acnt_png.png',
+                        height: 35,
+                        width: 35,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Text(
-                'Feel At Home Offers you the ',
-                style: TextStyle(fontWeight: FontWeight.w100, fontSize: 16),
-              ),
-              Text(
-                'Best level of comfort !!!',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
+                  ],
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0, left: 18),
-                child: Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('lib/asset/search.png'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: TextField(
-                            decoration: InputDecoration(
-                              //icon: Icon( Icons.search),
-                              border: InputBorder.none,
-                              hintText: 'Search',
+                Text(
+                  'Feel At Home Offers you the ',
+                  style: TextStyle(fontWeight: FontWeight.w100, fontSize: 16),
+                ),
+                Text(
+                  'Best level of comfort !!!',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0, left: 18),
+                  child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Row(
+                        children: [
+                          Image.asset('lib/asset/search.png'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                //icon: Icon( Icons.search),
+                                border: InputBorder.none,
+                                hintText: 'Search',
+                              ),
                             ),
                           ),
+                        ],
+                      )),
+                ),
+                ChoicechipCountry(),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Popular properties',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
                         ),
-                      ],
-                    )),
-              ),
-              ChoicechipCountry(),
-              Row(
-                children: [
-                  Text(
-                    'Popular properties',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                      ),
+                      Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'view all',
+                          style: TextStyle(color: Colors.green[200]),
+                        ),
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.grey[200]),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50))),
+                            textStyle: MaterialStateProperty.all(
+                                TextStyle(color: Colors.green[700]))),
+                      )
+                    ],
                   ),
-                  Spacer(),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'view all',
-                      style: TextStyle(color: Colors.green[200]),
-                    ),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.grey[200]),
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50))),
-                        textStyle: MaterialStateProperty.all(
-                            TextStyle(color: Colors.green[700]))),
-                  )
-                ],
-              ),
-              Expanded(child: GridList())
-            ],
+                ),
+                Expanded(child: GridList())
+              ],
+            ),
           ),
         ),
-      ),
       ),
       //bottomNavigationBar: SampleUiBottombar(),
     );
