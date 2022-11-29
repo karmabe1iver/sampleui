@@ -63,26 +63,54 @@ class GridList extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child:
+                          RichText(
+                            maxLines: 3,
+                            text: TextSpan(
+                              text: 'from',
+                                  style: TextStyle(
+                                    color: Colors.grey
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text:
+                                      details[index].price,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      color: Colors.cyan),
+
+                                    ),
+                                    TextSpan(
+                                      text: '/week',
+                                      style: TextStyle(
+                                        color: Colors.grey
+                                      )
+                                    )
+                                  ]
+
+                            ),
+
+                          )
                       //Row(
                       //  children: [
                          // Text('from',
                          // maxLines: 2,
                          // overflow: TextOverflow.fade,),
-                          Text(
-                           'from ${details[index].price} /week ',
-                            maxLines: 2,
-                            overflow: TextOverflow.fade,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w900,
+                          //Text(
+
+                          // 'from ${details[index].price} /week ',
+                            //maxLines: 2,
+                            //overflow: TextOverflow.fade,
+                            //style: TextStyle(
+                              //fontWeight: FontWeight.w900,
                              // color: Colors.cyan,
                             ),
-                          ),
+                          //),
                          // Text('/week',
                          // maxLines: 2,
                          // overflow: TextOverflow.fade,)
                        // ],
                      // ),
-                    )
+                    //)
                   ],
                 ),
               ),
