@@ -13,7 +13,7 @@ class _ChoicechipCountryState extends State<ChoicechipCountry> {
 
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;///kmplkp
+    size = MediaQuery.of(context).size;///kmplkpmikoikm
     width = size.width;
     height = size.height;
     return Padding(
